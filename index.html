@@ -1,11 +1,62 @@
-
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>TEST</title>
+<meta charset="UTF-8">
+<title>Cho An cai  ...</title>
+<style>
+body {
+  margin: 0;
+  background: black;
+  color: red;
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#start {
+  font-size: 30px;
+  cursor: pointer;
+}
+#scare {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: black;
+}
+#scare img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
 </head>
-<body style="background:black;color:red;font-size:40px;text-align:center">
-  WEB ĐÃ CHẠY 😈
+
+<body>
+
+<div id="start">Nhấp Vào ( Lâm Vỉnh An ) Koiiiii<</div>
+
+<div id="scare">
+  <img src="anh-ma-kinh-di.jpg">
+  <audio id="sound">
+    <source src="jumpscare.mp3">
+  </audio>
+</div>
+
+<script>
+const start = document.getElementById("start");
+const scare = document.getElementById("scare");
+const sound = document.getElementById("sound");
+
+start.onclick = () => {
+  start.style.display = "none";
+
+  setTimeout(() => {
+    scare.style.display = "block";
+    sound.play();
+  }, 3000); // hù sau 3 giây
+};
+</script>
+
 </body>
 </html>
